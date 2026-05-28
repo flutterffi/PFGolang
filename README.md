@@ -83,7 +83,31 @@ These folders are meant to help you practice:
 - `go work use`
 - `go env GOPATH`
 
-### 4. How To Practice
+### 4. Advanced Practice
+
+The `advanced/` directory is for patterns you will meet in real Go projects.
+
+Run them like this:
+
+```bash
+go run ./advanced/19_generics
+go run ./advanced/20_context_and_cancellation
+go run ./advanced/21_worker_pool
+go run ./advanced/22_real_http_server
+go run ./advanced/23_json_file_project
+go run ./advanced/24_cli_todo_app --list
+```
+
+Topics covered:
+
+- generic types and functions
+- context timeouts and cancellation
+- worker pool concurrency
+- real HTTP routes and local servers
+- JSON persistence to files
+- CLI argument parsing with a small app
+
+### 5. How To Practice
 
 Use the repository in loops:
 
@@ -108,6 +132,7 @@ Good modifications to try:
 PFGolang/
   foundations/    # syntax drills, one runnable file per lesson
   intermediate/   # slightly more realistic runnable exercises
+  advanced/       # real-world patterns and mini-projects
   pkg/            # reusable packages for training and testing
   modules/        # module and workspace practice
   go.mod          # root module
@@ -119,6 +144,7 @@ PFGolang/
 ```bash
 go run ./foundations/06_functions
 go run ./intermediate/16_json_basics
+go run ./advanced/24_cli_todo_app --add "practice interfaces"
 go run ./modules/02_flags_cli --name Learner
 go test ./...
 go mod tidy
@@ -135,14 +161,20 @@ go work sync
 
 ## Next Expansion Ideas
 
-- generics
 - interfaces in larger designs
 - benchmarks
-- context and cancellation
 - dependency injection
 - database access
 - custom packages with versioning
 - middleware and routing
-- concurrency patterns with worker pools
+- graceful shutdown with signals
+- streaming and pipelines
+- mock-based testing for services
+
+## Advanced Lesson Notes
+
+- `advanced/22_real_http_server` uses `httptest` to prove the handler works first, then tries a real server on `http://127.0.0.1:8080`. In restricted sandboxes, the live socket step may be blocked, which is also a useful lesson about environments.
+- `advanced/23_json_file_project` writes data to a temporary JSON file so you can learn persistence without polluting the repository.
+- `advanced/24_cli_todo_app` stores tasks in memory for each run. Later you can upgrade it to save tasks to disk.
 
 Build slowly, stay curious, and use this repo as your personal Go gym.
