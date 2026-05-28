@@ -36,7 +36,32 @@ Suggested order:
 11. `11_error_handling`
 12. `12_goroutines_and_channels`
 
-### 2. Modules
+### 2. Intermediate Practice
+
+The `intermediate/` directory starts moving from isolated syntax drills to code organization.
+
+Run them like this:
+
+```bash
+go run ./intermediate/13_pointers
+go run ./intermediate/14_packages_and_files
+go run ./intermediate/15_table_driven_tests
+go test ./pkg/... ./intermediate/...
+go run ./intermediate/16_json_basics
+go run ./intermediate/17_file_io
+go run ./intermediate/18_http_server
+```
+
+Topics covered:
+
+- pointers and mutation
+- splitting logic into reusable packages
+- table-driven testing
+- JSON encoding and decoding
+- file creation, writing, and reading
+- small HTTP handlers
+
+### 3. Modules
 
 The root repository is a Go module, and `modules/` also contains extra module examples.
 
@@ -58,7 +83,7 @@ These folders are meant to help you practice:
 - `go work use`
 - `go env GOPATH`
 
-### 3. How To Practice
+### 4. How To Practice
 
 Use the repository in loops:
 
@@ -82,6 +107,8 @@ Good modifications to try:
 ```text
 PFGolang/
   foundations/    # syntax drills, one runnable file per lesson
+  intermediate/   # slightly more realistic runnable exercises
+  pkg/            # reusable packages for training and testing
   modules/        # module and workspace practice
   go.mod          # root module
   go.work         # workspace file including the root and nested modules
@@ -91,6 +118,7 @@ PFGolang/
 
 ```bash
 go run ./foundations/06_functions
+go run ./intermediate/16_json_basics
 go run ./modules/02_flags_cli --name Learner
 go test ./...
 go mod tidy
@@ -107,14 +135,14 @@ go work sync
 
 ## Next Expansion Ideas
 
-- pointers
 - generics
-- file I/O
-- HTTP servers
-- JSON encoding
 - interfaces in larger designs
-- table-driven tests
 - benchmarks
 - context and cancellation
+- dependency injection
+- database access
+- custom packages with versioning
+- middleware and routing
+- concurrency patterns with worker pools
 
 Build slowly, stay curious, and use this repo as your personal Go gym.
