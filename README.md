@@ -9,6 +9,18 @@ The goal is simple:
 - learn module and workspace management without extra setup friction
 - leave room for advanced exercises later
 
+## Start Here
+
+If you want the shortest path into practice, open these first:
+
+- [STUDY_PLAN.md](./STUDY_PLAN.md)
+- [EXERCISES.md](./EXERCISES.md)
+- [PRACTICE_CHECKLIST.md](./PRACTICE_CHECKLIST.md)
+- [foundations/README.md](./foundations/README.md)
+- [intermediate/README.md](./intermediate/README.md)
+- [advanced/README.md](./advanced/README.md)
+- [modules/README.md](./modules/README.md)
+
 ## Learning Path
 
 ### 1. Foundations
@@ -195,6 +207,10 @@ PFGolang/
   advanced/       # real-world patterns and mini-projects
   pkg/            # reusable packages for training and testing
   modules/        # module and workspace practice
+  STUDY_PLAN.md   # sprint-style learning path
+  EXERCISES.md    # hands-on exercise prompts
+  PRACTICE_CHECKLIST.md
+  Makefile        # convenience commands
   go.mod          # root module
   go.work         # workspace file including the root and nested modules
 ```
@@ -202,6 +218,11 @@ PFGolang/
 ## Commands You Will Use Often
 
 ```bash
+make help
+make lesson LESSON=foundations/06_functions
+make lesson LESSON=advanced/54_deployment_ready_todo_service
+make test
+make bench
 go run ./foundations/06_functions
 go run ./intermediate/16_json_basics
 go run ./advanced/24_cli_todo_app --add "practice interfaces"
@@ -216,6 +237,16 @@ go test -bench=. ./advanced/26_benchmarks
 go mod tidy
 go work sync
 ```
+
+## Official Go Docs
+
+- Main docs: https://go.dev/doc/
+- Language specification: https://go.dev/ref/spec
+- Tour of Go: https://go.dev/tour/
+- Effective Go: https://go.dev/doc/effective_go
+- Standard library reference: https://pkg.go.dev/std
+- Modules reference: https://go.dev/ref/mod
+- Workspace reference: https://go.dev/ref/mod#workspaces
 
 ## Training Rules For Yourself
 
