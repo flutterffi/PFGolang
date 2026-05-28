@@ -120,6 +120,12 @@ go run ./advanced/45_message_queue_shape
 go run ./advanced/46_feature_flags
 go run ./advanced/47_integration_test_shape
 go run ./advanced/48_production_style_todo_service
+go run ./advanced/49_pagination_shape
+go run ./advanced/50_multi_tenant_shape
+go run ./advanced/51_grpc_basics_shape
+go run ./advanced/52_background_job_runner
+go run ./advanced/53_distributed_lock_shape
+go run ./advanced/54_deployment_ready_todo_service
 ```
 
 Topics covered:
@@ -154,6 +160,12 @@ Topics covered:
 - feature flags
 - integration-test shape
 - a production-style Todo service
+- pagination strategies
+- multi-tenant service shape
+- gRPC request and response shape
+- background jobs
+- distributed lock shape
+- a deployment-ready Todo service
 
 ### 5. How To Practice
 
@@ -197,6 +209,7 @@ go run ./advanced/30_persistent_cli_todo_app --file /tmp/pfgolang-tasks.json --a
 go run ./advanced/36_small_rest_api_project
 go run ./advanced/42_full_todo_api_project
 go run ./advanced/48_production_style_todo_service
+go run ./advanced/54_deployment_ready_todo_service
 go run ./modules/02_flags_cli --name Learner
 go test ./...
 go test -bench=. ./advanced/26_benchmarks
@@ -216,12 +229,13 @@ go work sync
 
 - custom packages with versioning
 - cron-style background jobs
-- distributed locks
 - integration test containers
-- pagination strategies
-- multi-tenant service shape
-- protobuf and gRPC basics
 - event sourcing shape
+- schema migrations
+- service discovery shape
+- circuit breakers
+- S3-style object storage flow
+- Terraform shape for service deployment
 
 ## Advanced Lesson Notes
 
@@ -233,5 +247,6 @@ go work sync
 - `advanced/36_small_rest_api_project` uses `httptest` for a safe self-check and prints example API responses without needing a long-running server.
 - `advanced/42_full_todo_api_project` keeps the server in memory and exercises routes with `httptest`, so you can practice API structure without needing a real database.
 - `advanced/48_production_style_todo_service` is still small on purpose, but it combines routing, caching, flags, queue publishing, and self-checking into one place.
+- `advanced/54_deployment_ready_todo_service` adds tenant-aware routing, pagination, background jobs, and a deployment config shape without turning the repo into a large framework.
 
 Build slowly, stay curious, and use this repo as your personal Go gym.
