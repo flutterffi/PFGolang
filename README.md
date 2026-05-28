@@ -114,6 +114,12 @@ go run ./advanced/39_retry_and_backoff
 go run ./advanced/40_rate_limiter
 go run ./advanced/41_websocket_basics
 go run ./advanced/42_full_todo_api_project
+go run ./advanced/43_openapi_shape
+go run ./advanced/44_cache_layer
+go run ./advanced/45_message_queue_shape
+go run ./advanced/46_feature_flags
+go run ./advanced/47_integration_test_shape
+go run ./advanced/48_production_style_todo_service
 ```
 
 Topics covered:
@@ -142,6 +148,12 @@ Topics covered:
 - rate limiting
 - WebSocket message flow basics
 - a fuller Todo API project
+- OpenAPI document shape
+- cache layers
+- message queue flow
+- feature flags
+- integration-test shape
+- a production-style Todo service
 
 ### 5. How To Practice
 
@@ -184,6 +196,7 @@ go run ./advanced/24_cli_todo_app --add "practice interfaces"
 go run ./advanced/30_persistent_cli_todo_app --file /tmp/pfgolang-tasks.json --add "practice storage"
 go run ./advanced/36_small_rest_api_project
 go run ./advanced/42_full_todo_api_project
+go run ./advanced/48_production_style_todo_service
 go run ./modules/02_flags_cli --name Learner
 go test ./...
 go test -bench=. ./advanced/26_benchmarks
@@ -202,13 +215,13 @@ go work sync
 ## Next Expansion Ideas
 
 - custom packages with versioning
-- OpenAPI generation
-- caching layers
-- message queues
 - cron-style background jobs
-- feature flags
 - distributed locks
 - integration test containers
+- pagination strategies
+- multi-tenant service shape
+- protobuf and gRPC basics
+- event sourcing shape
 
 ## Advanced Lesson Notes
 
@@ -219,5 +232,6 @@ go work sync
 - `advanced/30_persistent_cli_todo_app` stores items in a JSON file you choose with `--file`.
 - `advanced/36_small_rest_api_project` uses `httptest` for a safe self-check and prints example API responses without needing a long-running server.
 - `advanced/42_full_todo_api_project` keeps the server in memory and exercises routes with `httptest`, so you can practice API structure without needing a real database.
+- `advanced/48_production_style_todo_service` is still small on purpose, but it combines routing, caching, flags, queue publishing, and self-checking into one place.
 
 Build slowly, stay curious, and use this repo as your personal Go gym.
