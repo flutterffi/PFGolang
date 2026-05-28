@@ -96,6 +96,12 @@ go run ./advanced/21_worker_pool
 go run ./advanced/22_real_http_server
 go run ./advanced/23_json_file_project
 go run ./advanced/24_cli_todo_app --list
+go run ./advanced/25_interfaces_in_design
+go test -bench=. ./advanced/26_benchmarks
+go run ./advanced/27_graceful_shutdown
+go run ./advanced/28_pipelines
+go test ./advanced/29_service_tests_with_mocks
+go run ./advanced/30_persistent_cli_todo_app --file /tmp/pfgolang-tasks.json --list
 ```
 
 Topics covered:
@@ -106,6 +112,12 @@ Topics covered:
 - real HTTP routes and local servers
 - JSON persistence to files
 - CLI argument parsing with a small app
+- interface-based design
+- benchmarks
+- graceful shutdown
+- pipelines
+- mock-based service testing
+- persistent CLI state
 
 ### 5. How To Practice
 
@@ -145,8 +157,10 @@ PFGolang/
 go run ./foundations/06_functions
 go run ./intermediate/16_json_basics
 go run ./advanced/24_cli_todo_app --add "practice interfaces"
+go run ./advanced/30_persistent_cli_todo_app --file /tmp/pfgolang-tasks.json --add "practice storage"
 go run ./modules/02_flags_cli --name Learner
 go test ./...
+go test -bench=. ./advanced/26_benchmarks
 go mod tidy
 go work sync
 ```
@@ -161,20 +175,20 @@ go work sync
 
 ## Next Expansion Ideas
 
-- interfaces in larger designs
-- benchmarks
 - dependency injection
 - database access
 - custom packages with versioning
 - middleware and routing
-- graceful shutdown with signals
-- streaming and pipelines
-- mock-based testing for services
+- authentication and authorization
+- structured logging
+- tracing and metrics
 
 ## Advanced Lesson Notes
 
 - `advanced/22_real_http_server` uses `httptest` to prove the handler works first, then tries a real server on `http://127.0.0.1:8080`. In restricted sandboxes, the live socket step may be blocked, which is also a useful lesson about environments.
 - `advanced/23_json_file_project` writes data to a temporary JSON file so you can learn persistence without polluting the repository.
 - `advanced/24_cli_todo_app` stores tasks in memory for each run. Later you can upgrade it to save tasks to disk.
+- `advanced/27_graceful_shutdown` simulates receiving a stop signal so the example exits on its own.
+- `advanced/30_persistent_cli_todo_app` stores items in a JSON file you choose with `--file`.
 
 Build slowly, stay curious, and use this repo as your personal Go gym.
