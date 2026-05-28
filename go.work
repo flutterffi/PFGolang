@@ -1,0 +1,9 @@
+go 1.26.0
+
+use (
+	.
+	./modules/01_single_module_app
+	./modules/02_flags_cli
+	./modules/03_workspace_alpha
+	./modules/04_workspace_beta
+)
